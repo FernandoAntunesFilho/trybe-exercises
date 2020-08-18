@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Eu sou Tryber e...
 FRASE=$*
 
 for PALAVRA in $FRASE

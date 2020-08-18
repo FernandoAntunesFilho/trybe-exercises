@@ -1,5 +1,9 @@
 #!/bin/bash
+
 # Vou ter muito sucesso na programação!
+
+
+
 FRASE=$*
 
 for PALAVRA in $FRASE

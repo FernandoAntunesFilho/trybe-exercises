@@ -1,3 +1,7 @@
 .main-nav li{
     display: inline;
 }
+
+.tamanho-imagens{
+    width: 400px;
+}

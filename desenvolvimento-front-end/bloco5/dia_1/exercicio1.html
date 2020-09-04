@@ -52,12 +52,16 @@
  6- Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
 
-        //Quesito 1
+        //Quesito 1 - Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
         document.getElementsByTagName('p')[1].innerText="Com bom emprego";
 
-        //Quesito 2
+        //Quesito 2 - Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
         let mudaCor=document.getElementsByClassName('main-content');
         mudaCor[0].style.backgroundColor='rgb(76,164,109)';
+
+        //Quesito 3 - Crie uma função que mude a cor do quadrado vermelho para branco.
+        let mudaCorMeio=document.getElementsByClassName('center-content');
+        mudaCorMeio[0].style.backgroundColor='white'
 
         
     </script>

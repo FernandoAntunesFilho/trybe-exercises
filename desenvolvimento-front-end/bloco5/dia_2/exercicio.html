@@ -63,9 +63,12 @@
       let titulo = document.createElement('h1');
       titulo.innerText='Exercício 5.2 - JavaScript DOM';
       let corpo =document.body;
-      //console.log(titulo);
-      //console.log(corpo);
       corpo.appendChild(titulo);
+
+      //Adicione a tag div com a classe main-content como filho da tag body;
+      let divisao = document.createElement('div');
+      divisao.className='main-content';
+      corpo.appendChild(divisao);
 
       
     </script>

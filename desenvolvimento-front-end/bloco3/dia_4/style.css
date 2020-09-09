@@ -1,0 +1,41 @@
+.main-nav li{
+    display: inline;
+}
+
+.tamanho-imagens{
+    width: 400px;
+}
+
+.tab0{    
+    list-style-type: none;
+}
+
+.tab1{
+    padding-left: 1em;
+    list-style-type: none;
+}
+
+.tab2{
+    padding-left: 2em;
+    list-style-type: none;
+}
+
+.tab3{
+    padding-left: 3em;
+    list-style-type: none;
+}
+
+.tab4{
+    padding-left: 4em;
+    list-style-type: none;
+}
+
+.tab5{
+    padding-left: 5em;
+    list-style-type: none;
+}
+
+.tab6{
+    padding-left: 6em;
+    list-style-type: none;
+}

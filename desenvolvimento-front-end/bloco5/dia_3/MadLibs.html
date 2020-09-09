@@ -18,8 +18,20 @@
   
  <div id="story"></div>
   
+ <!-- SCRIPT JS COMEÇA AQUI -->
  <script>
-     
+     let botao = document.getElementById('lib-button');
+     let substantivo = document.getElementById('noun');
+     let adjetivo = document.getElementById('adjective');
+     let nome = document.getElementById('person');
+     let estoria = document.getElementById('story');
+
+     botao.addEventListener('click',makeMadLib);
+
+     function makeMadLib(){
+        let frase = `${nome.value} gosta muito de ${substantivo.value} ${adjetivo.value}`
+        estoria.innerText=frase;        
+     }
  </script>
  </body>
 </html>

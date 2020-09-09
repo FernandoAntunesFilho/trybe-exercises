@@ -184,6 +184,10 @@
             }
         
         //3-Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+          divisao=document.getElementsByClassName("main-content");
+          divisaoFilha=document.getElementsByClassName("left-content");
+          divisao[0].removeChild(divisaoFilha[0]);
+
     </script>
   </body>
 </html>

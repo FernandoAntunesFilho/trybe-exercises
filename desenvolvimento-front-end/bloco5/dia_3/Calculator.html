@@ -2,40 +2,120 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Calculator</title>
+<title>Calculadora</title>
 </head>
 <body>
 
-  <label>Square this number:
+  <label>Quadrado do número:
     <input type="number" id="square-input" size="2">
   </label>
-  <button id="square-button">Calculate</button>
+  <button id="square-button">Calcular</button>
   <br><br>
   
-  <label>Half this number:
+  <label>Metade desse número:
     <input type="number" id="half-input" size="2">
   </label>
-  <button id="half-button">Calculate</button>
+  <button id="half-button">Calcular</button>
   <br><br>
   
   <label>
-    Fraction:
+    Fração:
     <input type="number" id="percent1-input" size="2">
   </label>
   <label>
-    Whole:
+    Inteiro:
     <input type="number" id="percent2-input" size="2">
   </label>
-  <button id="percent-button">Calculate</button>
+  <button id="percent-button">Calcular</button>
   <br><br>
   
-  <label>Calculate area of circle with radius:
+  <label>Calcule a área do círculo com o raio:
     <input type="number" id="area-input" size="2">
   </label>
-  <button id="area-button">Calculate</button> 
+  <button id="area-button">Calcular</button> 
   <br><br>
   <div id="solution"></div>
 
+  <script>
+// Coloca evento no botão de quadrado
+let botaoSquare=document.getElementById('square-button');
+botaoSquare.addEventListener('click',function() {
+    let num =document.getElementById('square-input').value;
+    document.getElementById('solution').innerText=squareNumber(num);
+});
+// Coloca evento no texto de quadrado
+let textoSquare=document.getElementById('square-input');
+textoSquare.addEventListener('keyup',function() {
+    let num =document.getElementById('square-input').value;
+    document.getElementById('solution').innerText=squareNumber(num);
+});
+//------------------------------------------------------------------------------------------
+// Coloca evento no botão de metade
+let botaoHalf=document.getElementById('half-button');
+botaoHalf.addEventListener('click',function() {
+    let num =document.getElementById('half-input').value;
+    document.getElementById('solution').innerText=halfOf(num);
+});
+// Coloca evento no texto de metade
+let textoHalf=document.getElementById('half-input');
+textoHalf.addEventListener('keyup',function() {
+    let num =document.getElementById('half-input').value;
+    document.getElementById('solution').innerText=halfOf(num);
+});
+//------------------------------------------------------------------------------------------
+// Coloca evento no botão de porcentagem
+let botaoPorcento=document.getElementById('percent-button');
+botaoPorcento.addEventListener('click',function() {
+    let num1 =document.getElementById('percent1-input').value;
+    let num2 =document.getElementById('percent2-input').value;
+    document.getElementById('solution').innerText=percentOf(num1,num2);
+});
+// Coloca evento no texto de porcentagem (campo 'inteiro')
+let textoPorcento=document.getElementById('percent2-input');
+textoPorcento.addEventListener('keyup',function() {
+    let num1 =document.getElementById('percent1-input').value;
+    let num2 =document.getElementById('percent2-input').value;
+    document.getElementById('solution').innerText=percentOf(num1,num2);
+});
+//------------------------------------------------------------------------------------------
+// Coloca evento no botão de area
+let botaoArea=document.getElementById('area-button');
+botaoArea.addEventListener('click',function() {
+    let num =document.getElementById('area-input').value;
+    document.getElementById('solution').innerText=areaOfCircle(num);
+});
+// Coloca evento no texto de area
+let textoArea=document.getElementById('area-input');
+textoArea.addEventListener('keyup',function() {
+    let num =document.getElementById('area-input').value;
+    document.getElementById('solution').innerText=areaOfCircle(num);
+});
+//------------------------------------------------------------------------------------------
+
+function squareNumber(num) {
+    var squaredNumber = num * num;
+    console.log('The result of squaring the number ' + num + ' is ' + squaredNumber);
+    return squaredNumber;
+}
+
+function halfOf(num) {
+    var half = num / 2;
+    console.log('Half of ' + num + ' is ' +  half);
+    return half;
+}
+
+function percentOf(num1, num2) {
+    var percent = (num1/num2) * 100;
+    console.log(num1 + ' is ' + percent + '% of ' + num2);
+    return percent;
+}
+
+function areaOfCircle(radius) {
+    var area = Math.PI * squareNumber(radius);
+    console.log('The area of circle with radius ' + radius + ' is ' + area);
+    return area;
+}
+  </script>
   
 </body>
 </html>

@@ -192,6 +192,11 @@
           divisao=document.getElementsByClassName("right-content");
           divisao[0].style.marginRight='auto';
 
+        //5-Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde
+          divisaoFilha=document.getElementsByClassName('center-content');
+          divisao=divisaoFilha[0].parentNode;
+          divisao.style.backgroundColor='green';
+
     </script>
   </body>
 </html>

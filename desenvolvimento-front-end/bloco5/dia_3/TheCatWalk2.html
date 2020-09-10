@@ -11,6 +11,7 @@
   
     <script>
         let cat = document.getElementById('walking-cat');
+        let direcao = "prafrente";
         cat.style.marginLeft='0px'
 
         function catWalk(){
@@ -18,7 +19,16 @@
             console.log(cat.style.marginLeft);
 
                 if (parseInt(cat.style.marginLeft) > window.innerWidth){
-                    resetCat();
+                    direcao='pratras';
+                }
+        }
+
+        function catBack(){
+            cat.style.marginLeft = parseInt(cat.style.marginLeft) - 10 + 'px';
+            console.log(cat.style.marginLeft);
+
+                if (parseInt(cat.style.marginLeft) < 0){
+                    direcao='prafrente';
                 }
         }
 
@@ -26,7 +36,16 @@
             cat.style.marginLeft='0px';
         }
 
-        //setInterval(catWalk, 50);
+        function walkOrBack(){
+            if (direcao === 'prafrente'){
+                catWalk();
+            }
+            else {
+                catBack();
+            }
+        }
+
+        setInterval(walkOrBack, 50);
     </script>
 
  </body>

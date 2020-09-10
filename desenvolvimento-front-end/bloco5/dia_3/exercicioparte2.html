@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercício - Parte 2</title>    
-    <!-- Seu código JavaScript pode vir aqui -->
+    <style>
+      .botao-multiplicar{
+        background-color: blue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size:x-large;
+        display: block;
+        padding: 20px;
+        margin-right: 80%;
+        margin-top: 5px;
+      }
+      #imagem-bonus{
+        width: 400px;
+      }
+    </style>
     <!-- Seu código JavaScript pode vir aqui -->
   </head>
   <body>
@@ -34,9 +47,8 @@
         <strong>discount</strong> o resultado da multiplicação.
       </p>
       <script language="javascript" type="text/javascript">
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
+        let productPrice = 59.99;
+        let discount = 0.30;
       </script>
       <hr />
       <h2>Bônus</h2>
@@ -66,6 +78,31 @@
         criaBotao.addEventListener('click',function(){
           alert('Você foi avisado');
         });
+
+        let selecionaP=document.querySelectorAll('p');
+        let novaDiv=document.createElement('div');
+        novaDiv.innerText="Multiplicar";
+        novaDiv.className="botao-multiplicar";
+        selecionaP[1].appendChild(novaDiv);
+
+        novaDiv.addEventListener('click',function(){
+          alert(`Desconto de R$${productPrice*discount}`)
+        })
+
+        selecionaDiv=document.querySelectorAll("div");
+        let novaImagem=document.createElement('img');
+        novaImagem.id='imagem-bonus';
+        novaImagem.src='./images/expectativa.jpg';
+        selecionaDiv[0].appendChild(novaImagem);
+
+        novaImagem.addEventListener('mouseover',function(){
+          let mudaFoto=document.getElementById('imagem-bonus').src='./images/realidade.jpg';
+          console.log('MouseOver');
+        })
+        novaImagem.addEventListener('mouseleave',function(){
+          document.getElementById('imagem-bonus').src='./images/expectativa.jpg';
+          console.log('MouseLeave');
+        })
     </script>
   </body>
 </html>

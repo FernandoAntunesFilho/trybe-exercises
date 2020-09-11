@@ -70,7 +70,7 @@
 
 <script>
     //CÓDIGO PARA MUDAR A COR DO FUNDO DA PÁGINA
-    let selecionaCorDeFundo=document.getElementById('cor-fundo');    
+    let selecionaCorDeFundo=document.getElementById('cor-fundo');
     let corFundo=document.getElementById('main-div');
 
     corFundo.style.backgroundColor='rgb(255,255,255';
@@ -82,6 +82,8 @@
         corFundo.style.backgroundColor=retornaRGB(corIndex);
         //console.log(corFundo.style.backgroundColor);
         localStorage.corDeFundo = retornaRGB(corIndex);
+        localStorage.nomeCorDeFundo = corIndex;
+        //console.log(selecionaCorDeFundo[corIndex].innerText);
     })
 
     function retornaRGB(cor){
@@ -113,7 +115,7 @@
     //-------------------------------------------------------------------
 
     //CÓDIGO PARA MUDAR A COR DO TEXTO
-    let selecionaCorDoTexto=document.getElementById('cor-texto');    
+    let selecionaCorDoTexto=document.getElementById('cor-texto');
     let corTexto=document.getElementById('main-div');
 
     corTexto.style.color ='rgb(0,0,0';
@@ -125,6 +127,7 @@
         corTexto.style.color=retornaRGB(corIndex);
         //console.log(corTexto.style.color);
         localStorage.corDeTexto = retornaRGB(corIndex);
+        localStorage.nomeCorDeTexto = corIndex;
     })
     //-------------------------------------------------------------------
 
@@ -141,6 +144,7 @@
         tamanhoTexto.style.fontSize=retornaTamanhoFonte(tamanhoIndex);
         //console.log(tamanhoTexto.style.fontSize);
         localStorage.tamanhoDeFonte = retornaTamanhoFonte(tamanhoIndex);
+        localStorage.nomeTamanhoDeFonte = tamanhoIndex;
     })
 
     function retornaTamanhoFonte(tamanho){
@@ -184,6 +188,7 @@
         espacoLinha.style.lineHeight=retornaEspacoLinha(espacoIndex);
         //console.log(espacoLinha.style.lineHeight);
         localStorage.espacamentoDeLinha = retornaEspacoLinha(espacoIndex);
+        localStorage.nomeEspacamentoDeLinha = espacoIndex;
     })
 
     function retornaEspacoLinha(tamanho){
@@ -218,6 +223,7 @@
         blocoTexto.style.fontFamily=retornaFontFamily(familyIndex);
         //console.log(blocoTexto.style.fontFamily);
         localStorage.familiaDeFonte = retornaFontFamily(familyIndex);
+        localStorage.nomeFamiliaDeFonte = familyIndex;
     })
 
     function retornaFontFamily(familia){
@@ -235,6 +241,35 @@
         }
     }
     //-------------------------------------------------------------------
+
+    //ROTINA PARA CARREGAR OS DADOS GRAVADOS NA LOCALSTORAGE    
+    
+    function carregaDados(){
+        let recuperaCorFundo=document.getElementById('main-div');    
+        let recuperaCorTexto=document.getElementById('main-div');
+        let recuperaTamanhoTexto=document.getElementById('texto-leitura');
+        let recuperaEspacoLinha=document.getElementById('texto-leitura');
+        let recuperaBlocoTexto=document.getElementById('main-div');
+
+        let boxCorDeFundo=document.getElementById('cor-fundo');
+        let boxCorDoTexto=document.getElementById('cor-texto');
+        let boxSelecionaTexto=document.getElementById('tamanho-texto');
+        let boxSelecionaEspaco=document.getElementById('altura-linha');
+        let boxSelecionaFontFamily=document.getElementById('font-family');
+    
+        recuperaCorFundo.style.backgroundColor = localStorage.corDeFundo;
+            boxCorDeFundo.selectedIndex = localStorage.nomeCorDeFundo;
+        recuperaCorTexto.style.color = localStorage.corDeTexto;
+            boxCorDoTexto.selectedIndex = localStorage.nomeCorDeTexto;
+        recuperaTamanhoTexto.style.fontSize = localStorage.tamanhoDeFonte;
+            boxSelecionaTexto.selectedIndex = localStorage.nomeTamanhoDeFonte;
+        recuperaEspacoLinha.style.lineHeight = localStorage.espacamentoDeLinha;
+            boxSelecionaEspaco.selectedIndex = localStorage.nomeEspacamentoDeLinha;
+        recuperaBlocoTexto.style.fontFamily = localStorage.familiaDeFonte;
+            boxSelecionaFontFamily.selectedIndex = localStorage.nomeFamiliaDeFonte;
+    }
+
+window.onload = carregaDados();
 
 </script>
 </body>

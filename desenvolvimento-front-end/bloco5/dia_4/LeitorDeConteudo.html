@@ -81,6 +81,7 @@
         //console.log(retornaRGB(corIndex));
         corFundo.style.backgroundColor=retornaRGB(corIndex);
         //console.log(corFundo.style.backgroundColor);
+        localStorage.corDeFundo = retornaRGB(corIndex);
     })
 
     function retornaRGB(cor){
@@ -123,6 +124,7 @@
         //console.log(retornaRGB(corIndex));
         corTexto.style.color=retornaRGB(corIndex);
         //console.log(corTexto.style.color);
+        localStorage.corDeTexto = retornaRGB(corIndex);
     })
     //-------------------------------------------------------------------
 
@@ -138,6 +140,7 @@
         //console.log(retornaTamanhoFonte(tamanhoIndex));
         tamanhoTexto.style.fontSize=retornaTamanhoFonte(tamanhoIndex);
         //console.log(tamanhoTexto.style.fontSize);
+        localStorage.tamanhoDeFonte = retornaTamanhoFonte(tamanhoIndex);
     })
 
     function retornaTamanhoFonte(tamanho){
@@ -180,6 +183,7 @@
         //console.log(retornaEspacoLinha(espacoIndex));
         espacoLinha.style.lineHeight=retornaEspacoLinha(espacoIndex);
         //console.log(espacoLinha.style.lineHeight);
+        localStorage.espacamentoDeLinha = retornaEspacoLinha(espacoIndex);
     })
 
     function retornaEspacoLinha(tamanho){
@@ -210,9 +214,10 @@
     selecionaFontFamily.addEventListener('click',function(){
         let familyIndex=(selecionaFontFamily.selectedIndex);        
         
-        console.log(retornaFontFamily(familyIndex));
+        //console.log(retornaFontFamily(familyIndex));
         blocoTexto.style.fontFamily=retornaFontFamily(familyIndex);
-        console.log(blocoTexto.style.fontFamily);
+        //console.log(blocoTexto.style.fontFamily);
+        localStorage.familiaDeFonte = retornaFontFamily(familyIndex);
     })
 
     function retornaFontFamily(familia){

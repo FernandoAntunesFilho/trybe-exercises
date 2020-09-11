@@ -14,29 +14,223 @@
     <div>
         <h3>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h3>
     </div>
-    <div>
+    <div id='texto-leitura'>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in dui nisi. Donec venenatis pretium leo, condimentum sagittis risus ornare et. Etiam ut iaculis nisl. Mauris facilisis erat nisi, at consequat tortor consectetur eu. Nullam egestas felis at libero maximus venenatis. Quisque hendrerit ipsum et quam feugiat, in rhoncus nisl malesuada. Integer tempor tellus non est sodales consectetur pellentesque et velit. Maecenas gravida euismod est, at aliquet neque dictum id. Nullam erat velit, ultricies quis vehicula vel, rhoncus eleifend quam. Proin sed sapien cursus, dapibus ligula maximus, placerat turpis.
         </p>
     </div>
 </div>
 
-<label>Cor de fundo:</label>
+<div>
+    <label>Cor de fundo:</label>
+        <select id="cor-fundo">
+            <option class='cor' value="fundo-branco">Branco</option>
+            <option class='cor' value="fundo-preto">Preto</option>
+            <option class='cor' value="fundo-jet">Jet</option>
+            <option class='cor' value="fundo-melon">Melon</option>
+            <option class='cor' value="fundo-pink">Silver Pink</option>
+            <option class='cor' value="fundo-gray">Gray</option>
+            <option class='cor' value="fundo-cblue">Canbridge Blue</option>
+        </select>
 
-<select id="cor-fundo">
-  <option value="fundo-branco">Branco</option>
-  <option value="fundo-preto">Preto</option>
-  <option value="fundo-jet">Jet</option>
-  <option value="fundo-melon">Melon</option>
-  <option value="fundo-pink">Silver Pink</option>
-  <option value="fundo-gray">Gray</option>
-  <option value="fundo-cblue">Canbridge Blue</option>
-</select>
+    <label>Cor do texto:</label>
+        <select id="cor-texto">    
+            <option class='cor' value="texto-branco">Branco</option>    
+            <option class='cor' value="texto-preto">Preto</option>
+        </select>
+
+    <label>Tamanho da fonte:</label>
+        <select id="tamanho-texto">    
+            <option class='tamanho' value="9px">9</option>
+            <option class='tamanho' value="10px">10</option>
+            <option class='tamanho' value="13px">13</option>
+            <option class='tamanho' value="16px">16</option>
+            <option class='tamanho' value="18px">18</option>
+            <option class='tamanho' value="24px">24</option>
+            <option class='tamanho' value="32px">32</option>
+        </select>
+
+    <label>Espaçamento:</label>
+        <select id="altura-linha">    
+            <option class='tamanho' value="10px">10</option>
+            <option class='tamanho' value="20px">20</option>
+            <option class='tamanho' value="30px">30</option>
+            <option class='tamanho' value="40px">40</option>            
+        </select>
+
+    <label>Tipo da fonte:</label>
+        <select id="font-family">    
+            <option class='tamanho' value="serif">Serif</option>
+            <option class='tamanho' value="sans-serif">Sans-serif</option>
+            <option class='tamanho' value="monospace">Monospace</option>            
+        </select>
+
+</div>
 
 
 <script>
-    let selecionaCorDeFundo=document.getElementById('cor-fundo');
-    console.log('passei aqui');
+    //CÓDIGO PARA MUDAR A COR DO FUNDO DA PÁGINA
+    let selecionaCorDeFundo=document.getElementById('cor-fundo');    
+    let corFundo=document.getElementById('main-div');
+
+    corFundo.style.backgroundColor='rgb(255,255,255';
+
+    selecionaCorDeFundo.addEventListener('click',function(){
+        let corIndex=(selecionaCorDeFundo.selectedIndex);        
+        
+        //console.log(retornaRGB(corIndex));
+        corFundo.style.backgroundColor=retornaRGB(corIndex);
+        //console.log(corFundo.style.backgroundColor);
+    })
+
+    function retornaRGB(cor){
+        let stringRGB='';
+        switch (cor){
+            case 0:
+                stringRGB='rgb(255,255,255)';
+                return stringRGB;
+            case 1:
+                stringRGB='rgb(0,0,0)';
+                return stringRGB;
+            case 2:
+                stringRGB='rgb(51, 50, 50)';
+                return stringRGB;
+            case 3:
+                stringRGB='rgb(247, 178, 173)';
+                return stringRGB;
+            case 4:
+                stringRGB='rgb(206, 183, 179)';
+                return stringRGB;
+            case 5:
+                stringRGB='rgb(183, 183, 183)';
+                return stringRGB;
+            case 6:
+                stringRGB='rgb(154, 188, 167)';
+                return stringRGB;
+        }
+    }
+    //-------------------------------------------------------------------
+
+    //CÓDIGO PARA MUDAR A COR DO TEXTO
+    let selecionaCorDoTexto=document.getElementById('cor-texto');    
+    let corTexto=document.getElementById('main-div');
+
+    corTexto.style.color ='rgb(0,0,0';
+
+    selecionaCorDoTexto.addEventListener('click',function(){
+        let corIndex=(selecionaCorDoTexto.selectedIndex);        
+        
+        //console.log(retornaRGB(corIndex));
+        corTexto.style.color=retornaRGB(corIndex);
+        //console.log(corTexto.style.color);
+    })
+    //-------------------------------------------------------------------
+
+    //CÓDIGO PARA MUDAR TAMANHO DA FONTE
+    let selecionaTexto=document.getElementById('tamanho-texto');
+    let tamanhoTexto=document.getElementById('texto-leitura');
+
+    tamanhoTexto.style.fontSize ='9px';
+
+    selecionaTexto.addEventListener('click',function(){
+        let tamanhoIndex=(selecionaTexto.selectedIndex);        
+        
+        //console.log(retornaTamanhoFonte(tamanhoIndex));
+        tamanhoTexto.style.fontSize=retornaTamanhoFonte(tamanhoIndex);
+        //console.log(tamanhoTexto.style.fontSize);
+    })
+
+    function retornaTamanhoFonte(tamanho){
+        let fontSize='';
+        switch (tamanho){
+            case 0:
+                fontSize='9px';
+                return fontSize;
+            case 1:
+                fontSize='10px';
+                return fontSize;
+            case 2:
+                fontSize='13px';
+                return fontSize;
+            case 3:
+                fontSize='16px';
+                return fontSize;
+            case 4:
+                fontSize='18px';
+                return fontSize;
+            case 5:
+                fontSize='24px';
+                return fontSize;
+            case 6:
+                fontSize='32px';
+                return fontSize;
+        }
+    }
+    //-------------------------------------------------------------------
+
+    //CÓDIGO PARA MUDAR ESPAÇAMENTO ENTRE LINHAS
+    let selecionaEspaco=document.getElementById('altura-linha');
+    let espacoLinha=document.getElementById('texto-leitura');
+
+    espacoLinha.style.lineHeight ='10px';
+
+    selecionaEspaco.addEventListener('click',function(){
+        let espacoIndex=(selecionaEspaco.selectedIndex);        
+        
+        //console.log(retornaEspacoLinha(espacoIndex));
+        espacoLinha.style.lineHeight=retornaEspacoLinha(espacoIndex);
+        //console.log(espacoLinha.style.lineHeight);
+    })
+
+    function retornaEspacoLinha(tamanho){
+        let espacoAltura='';
+        switch (tamanho){
+            case 0:
+            espacoAltura='10px';
+                return espacoAltura;
+            case 1:
+            espacoAltura='20px';
+                return espacoAltura;
+            case 2:
+            espacoAltura='30px';
+                return espacoAltura;
+            case 3:
+            espacoAltura='40px';
+                return espacoAltura;            
+        }
+    }
+    //-------------------------------------------------------------------
+
+    //CÓDIGO PARA MUDAR FONT FAMILY
+    let selecionaFontFamily=document.getElementById('font-family');
+    let blocoTexto=document.getElementById('main-div');
+
+    blocoTexto.style.fontFamily ='serif';
+
+    selecionaFontFamily.addEventListener('click',function(){
+        let familyIndex=(selecionaFontFamily.selectedIndex);        
+        
+        console.log(retornaFontFamily(familyIndex));
+        blocoTexto.style.fontFamily=retornaFontFamily(familyIndex);
+        console.log(blocoTexto.style.fontFamily);
+    })
+
+    function retornaFontFamily(familia){
+        let fonteFamilia='';
+        switch (familia){
+            case 0:
+            fonteFamilia='serif';
+                return fonteFamilia;
+            case 1:
+            fonteFamilia='sans-serif';
+                return fonteFamilia;
+            case 2:
+            fonteFamilia='monospace';
+                return fonteFamilia;
+        }
+    }
+    //-------------------------------------------------------------------
+
 </script>
 </body>
 </html>
